@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+
+{% block title %}
+    Post Details
+{% endblock %}
+
+{% block content %}
+    {% include "components/nav.html" %}
+    <div class="card">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.body }}</p>
+          <p class="card-text"> Author: {{ post.author }}</p>
+      </div>
+</div>
+
+    <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-small">Delete Post</a>
+    <a href="{% url 'welcome' %}" class="btn btn-warning btn-small">Home</a>
+{% endblock %}
